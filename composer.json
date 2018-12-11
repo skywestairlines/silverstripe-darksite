@@ -1,0 +1,14 @@
+{
+    "name": "skywest/ss-darksite",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hilkiah Makemo",
+            "email": "hilkiah.makemo@skywest.com"
+        }
+    ],
+    "require": {},
+    "autoload": {        
+        "classmap": [ "src/" ]
+    }
+}

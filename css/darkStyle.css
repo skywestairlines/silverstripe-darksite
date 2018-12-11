@@ -1,0 +1,50 @@
+#Container {
+	padding-bottom: 0;
+}
+
+.DarkHeader {
+	width: 650px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.DarkLogo {
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	background: url(../images/DarkSiteLogo.jpg) no-repeat;
+	height: 93px;
+	margin-top: -9px;
+}
+
+.briefingLeft {
+	font-weight: bold;
+	font-size: 12px;
+	width: 60px;
+	float: left;
+	height: auto;
+	padding: 3px;
+	clear: both;
+	margin-top: 4px;
+}
+
+.briefingRight {
+	font-size: 12px;
+	float: left;
+	height: auto;
+	padding: 3px;
+	width: 200px;
+	margin-top: 4px;
+}
+
+.odd, .even {
+	font-size: 12px;
+	border-bottom: none !important;
+}
+.rsswidget{
+	position: relative;
+	float:right;
+	margin:-26px 0px 0px 0px;
+}
+#Layout {
+	
+}
