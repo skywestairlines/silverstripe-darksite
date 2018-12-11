@@ -9,7 +9,7 @@ use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 
 class DarkSite extends DataObject {
-	static $db = array(
+	private static $db = array(
 		'PRPlace'	 => 'Varchar(50)',
 		//'iTimeStamp' => 'Varchar()',
 		'Content' 	 => 'HTMLText',
@@ -36,21 +36,21 @@ class DarkSite extends DataObject {
 
 
 	
-	static $has_one = array(
+	private static $has_one = array(
 		//'DarkPage' => 'SiteTree'
 	);
 	
-	static $has_many = array(
+	private static $has_many = array(
 		'Releases' 	=> 'DarkSite_Release',
 		'Resources' => 'DarkSite_Resources',
 		//'Partners'  => 'Partner'
 	);
 	
-	static $many_many = array(
+	private static $many_many = array(
 		'Partners' => 'Partner'
 	);
 	
-	static $defaults = array(
+	private static $defaults = array(
 		'showReleases'  => 1,
 		'showPartners'  => 1,
 		'showBriefing'  => 1,					// don't really need this from the beginning??
@@ -63,7 +63,7 @@ class DarkSite extends DataObject {
 		'Title'			=> 'Flight #XXXX'
 	);
 	
-	static $summary_fields = array(
+	private static $summary_fields = array(
 		'FltNum',
 		'PRPlace' 	=> 'Title',
 		//'Content',
@@ -72,15 +72,15 @@ class DarkSite extends DataObject {
 		'LastEdited'
 	);
 	
-	static $searchable_fields = array(
+	private static $searchable_fields = array(
 		'FltNum',
 		'PRPlace',
 		'Content'
 	);
 	
-	static $default_sort = 'Active DESC';
+	private static $default_sort = 'Active DESC';
 
-	static $allowed_actions = array( 
+	private static $allowed_actions = array( 
          'edit', 
          'view', 
          'darkActivate',
@@ -340,11 +340,11 @@ class DarkSite extends DataObject {
 }
 
 // class DarkSite_Password extends DataObject {
-// 	static $db = array(
+// 	private static $db = array(
 // 		'finalPass' => 'Varchar(75)'
 // 	);
 	
-// 	static $summary_fields = array(
+// 	private static $summary_fields = array(
 // 		'Title' => 'Title'
 // 	);
 	

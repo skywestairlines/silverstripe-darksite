@@ -1,37 +1,37 @@
 <?php
 class Partner extends DataObject {
-	static $db = array(
+	private static $db = array(
 		'Title' 	  => 'Varchar(50)',
 		'PartnerContent' 	  => 'HTMLText',
 		'DarkPartnerLink' => 'Varchar(100)',
 		'DarkShowMe'	  => 'Boolean'
 	);
 	
-	static $has_one = array(
+	private static $has_one = array(
 		//'Parent'   => 'DarkSite',
 		'DarkLogo' => 'BetterImage'
 	);
 	
-	static $belongs_many_many = array(
+	private static $belongs_many_many = array(
 		'DarkSites' => 'DarkSite'
 	);
 	
-	static $summary_fields = array(
+	private static $summary_fields = array(
 		'Title'		  => 'Name',
 		'DarkPartnerLink' => 'Link',
 		'DarkThumb' 	  => 'Logo',
 		//'Showing'		  => 'Displayed'
 	);
-	static $searchable_fields = array(
+	private static $searchable_fields = array(
 		'Title'
 			);
 	
-	static $defaults = array(
+	private static $defaults = array(
 		'PartnerContent' => 'SkyWest Airlines is working with the full support of [Airline Name] to provide ongoing information and support for those who had loved ones onboard FLight #XXXX.',
 		'DarkShowMe'  => 1,
 	);
 	
-	static $default_sort = 'Title ASC';
+	private static $default_sort = 'Title ASC';
 	public function canView($member = NULL, $context = []){
 		
 		return Member::currentUser()->inGroups(array('3','2'));

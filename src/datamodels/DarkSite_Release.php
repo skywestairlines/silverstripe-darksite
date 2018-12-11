@@ -3,25 +3,25 @@
 class DarkSite_Release extends DataObject
 {
     // pdfs for the dark site
-    static $db = array(
+    private static $db = array(
         'Title' => 'Varchar(80)',
         'Excerpt' => 'Text',
         'Date' => 'Date',
         'HideInRSS' => 'Boolean',
     );
 
-    static $has_one = array(
+    private static $has_one = array(
         'Parent' => 'DarkSite',
         'DarkRelease' => 'File',
     );
 
-    static $summary_fields = array(
+    private static $summary_fields = array(
         'Title' => 'Title',
         'Date' => 'Date',
         'DarkRelease.Title' => 'Press Release PDF',
     );
 
-    static $default_sort = 'Date ASC';
+    private static $default_sort = 'Date ASC';
 
     public function canView($member = NULL, $context = [])
     {

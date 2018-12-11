@@ -9,15 +9,15 @@ class DarkAdmin extends ModelAdmin {
 		Requirements::javascript('darksite/javascript/darkAdmin.js');
 	}
 	
-	public static $managed_models = array(
+	private static $managed_models = array(
 		'DarkSite',// => array('record_controller' => 'DarkAdmin_RecordController'),
 		'Partner'				// ! un-comment to edit partners list
 		//'DarkSite_Password'		// ! this line should only be un-commented out when you need to set or change the password!!!!!!
 	);
 	
-	static $url_segment = 'darkAdmin';
-	static $menu_title = 'Dark Site';
-	static $set_page_length = 100;
+	private static $url_segment = 'darkAdmin';
+	private static $menu_title = 'Dark Site';
+	private static $set_page_length = 100;
 	
 	var $showImportForm = false;
 

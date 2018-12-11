@@ -6,16 +6,16 @@ class DarkSiteHoldingPage extends Page {
 		This is a dummy page that is populated by the DataObjects from DarkSite.php (Dark Site Admin in the CMS)
 		We will NOT pull any info from this page, this is just a holder.
 	*/
-	static $db = array(
+	private static $db = array(
 		'myTitle' => 'Varchar(25)'
 	);
 	
-	static $defaults = array(
+	private static $defaults = array(
 		'ShowInMenus' => 0,
 		'ShowInSearch' => 0
 	);
 	
-	static $allowed_children = array();
+	private static $allowed_children = array();
 	
 	public function getCMSFields() {
 		$f = parent::getCMSFields();
