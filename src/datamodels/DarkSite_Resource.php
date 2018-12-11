@@ -1,4 +1,9 @@
-git statu<?php  
+<?php  
+
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Security\Member;
+use SilverStripe\AssetAdmin\Forms\UploadField;
 
 class DarkSite_Resources extends DataObject
 {

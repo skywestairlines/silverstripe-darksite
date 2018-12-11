@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\ORM\DataExtension;
+
 class DarkSiteConfigDecorator extends DataExtension {
 	/**
 	* Define extra database field for which holding page to show

@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\ORM\DataExtension;
+
 class DarkSiteControllerExtension extends DataExtension {
    
 	/**

@@ -1,4 +1,12 @@
 <?php
+
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Security\Member;
+use SilverStripe\Security\Permission;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+
 class Partner extends DataObject {
 	private static $db = array(
 		'Title' 	  => 'Varchar(50)',

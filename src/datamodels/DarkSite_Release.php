@@ -1,5 +1,12 @@
 <?php  
 
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\DateField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Security\Member;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+
 class DarkSite_Release extends DataObject
 {
     // pdfs for the dark site
