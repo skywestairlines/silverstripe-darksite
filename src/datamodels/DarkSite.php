@@ -88,15 +88,15 @@ class DarkSite extends DataObject {
          'duplicate'
       ); 
 
-	public function canView($member = null){
+	public function canView($member = NULL, $context = []){
 		
 		return Member::currentUser()->inGroups(array('3','2'));
 	}
-	public function canCreate($member = null){
+	public function canCreate($member = NULL, $context = []){
 		
 		return Member::currentUser()->inGroups(array('3','2'));
 	}
-	public function canEdit($member = null){
+	public function canEdit($member = NULL, $context = []){
 		
 		return Member::currentUser()->inGroups(array('3','2'));
 	}
@@ -310,7 +310,7 @@ class DarkSite extends DataObject {
 	
 	*/
 	
-	// public function canCreate($member = null) {
+	// public function canCreate($member = NULL, $context = []) {
 	// 	if(!$member) $member = Member::currentUser();
 	// 	if(!$member) return false;
 	// 	return(
@@ -318,11 +318,11 @@ class DarkSite extends DataObject {
 	// 	);
 	// }
 	
-	// public function canView($member = null) {
+	// public function canView($member = NULL, $context = []) {
 	// 	$this->canEdit();
 	// }
 	
-	// public function canEdit($member = null) {
+	// public function canEdit($member = NULL, $context = []) {
 	// 	if(!$member) $member = Member::currentUser();
 	// 	if(!$member) return false;
 	// 	return(
@@ -330,7 +330,7 @@ class DarkSite extends DataObject {
 	// 	);
 	// }
 	
-	// public function canDelete($member = null) {
+	// public function canDelete($member = NULL, $context = []) {
 	// 	if(!$member) $member = Member::currentUser();
 	// 	if(!$member) return false;
 	// 	return(

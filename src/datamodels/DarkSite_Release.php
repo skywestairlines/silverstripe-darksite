@@ -23,17 +23,17 @@ class DarkSite_Release extends DataObject
 
     static $default_sort = 'Date ASC';
 
-    public function canView($member = null)
+    public function canView($member = NULL, $context = [])
     {
 
         return Member::currentUser()->inGroups(array('3', '2'));
     }
-    public function canCreate($member = null)
+    public function canCreate($member = NULL, $context = [])
     {
 
         return Member::currentUser()->inGroups(array('3', '2'));
     }
-    public function canEdit($member = null)
+    public function canEdit($member = NULL, $context = [])
     {
 
         return Member::currentUser()->inGroups(array('3', '2'));
