@@ -1,5 +1,11 @@
 <?php
 
+use SilverStripe\Dev\Debug;
+use SilverStripe\Security\Member;
+use SilverStripe\Control\Director;
+use SilverStripe\Control\Controller;
+use SilverStripe\Security\Permission;
+
 
 class DarkSiteHoldingPage extends Page {
 	/*
