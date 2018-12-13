@@ -1,5 +1,7 @@
 <?php  
 
+use SilverStripe\Control\Director;
+use SilverStripe\Control\Controller;
 use SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest;
 
 class DarkAdminPublishFieldDetailForm_ItemRequest extends GridFieldDetailForm_ItemRequest

@@ -29,7 +29,7 @@ class DarkSite extends DataObject {
 		'showBriefing' => 'Boolean',
 		'showContacts' => 'Boolean',
 		'showResources' => 'Boolean',
-		'FltNum' 	=> 'int',
+		'FltNum' 	=> 'Int',
 		'Title' 	=> 'Varchar(40)',
 		'showTab' 	=> 'Boolean'
 	);
