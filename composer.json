@@ -1,6 +1,6 @@
 {
     "name": "skywest/ss-darksite",
-    "type": "library",
+    "type": "silverstripe-vendormodule",
     "authors": [
         {
             "name": "Hilkiah Makemo",
@@ -8,7 +8,7 @@
         }
     ],
     "require": {},
-    "autoload": {        
+    "autoload": {
         "classmap": [ "src/" ]
     }
 }
