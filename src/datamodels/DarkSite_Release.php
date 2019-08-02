@@ -1,5 +1,6 @@
-<?php  
+<?php
 
+use SilverStripe\Assets\File;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\DateField;
 use SilverStripe\Forms\FieldList;
@@ -18,8 +19,8 @@ class DarkSite_Release extends DataObject
     );
 
     private static $has_one = array(
-        'Parent' => 'DarkSite',
-        'DarkRelease' => 'File',
+        'Parent' => DarkSite::class,
+        'DarkRelease' => File::class,
     );
 
     private static $summary_fields = array(
@@ -56,9 +57,9 @@ class DarkSite_Release extends DataObject
             //$uploadify->removeFolderSelection();
         }
         $datefield = new DateField('Date', 'Press Release Date');
-        $datefield->setConfig('showcalendar', true);
-        $datefield->setConfig('showdropdown', true);
-        $datefield->setConfig('dateformat', 'MM/dd/YYYY');
+        $datefield->config('showcalendar', true);
+        $datefield->config('showdropdown', true);
+        $datefield->config('dateformat', 'MM/dd/YYYY');
 
         $f = new FieldList(
             $datefield,

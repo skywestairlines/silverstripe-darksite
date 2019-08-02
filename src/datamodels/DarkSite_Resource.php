@@ -1,5 +1,6 @@
-<?php  
+<?php
 
+use SilverStripe\Assets\File;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Security\Member;
@@ -13,8 +14,8 @@ class DarkSite_Resources extends DataObject
     );
 
     private static $has_one = array(
-        'DarkResource' => 'File',
-        'Parent' => 'DarkSite',
+        'DarkResource' => File::class,
+        'Parent' => DarkSite::class,
         /*    not linking to pages anymore
     'PageLink' => 'SiteTree'*/
     );
