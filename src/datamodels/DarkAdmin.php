@@ -6,7 +6,7 @@ use SilverStripe\View\Requirements;
 class DarkAdmin extends ModelAdmin {
 	public function init() {
 		parent::init();
-		Requirements::javascript('skywest/ss-darksite: darksite/javascript/darkAdmin.js');
+		Requirements::javascript('skywest/ss-darksite: javascript/darkAdmin.js');
 	}
 
 	private static $managed_models = array(
