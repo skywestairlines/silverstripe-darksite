@@ -1,6 +1,7 @@
 {
     "name": "skywest/ss-darksite",
-    "type": "silverstripe-vendormodule",
+    "type": "library",
+    "keywords": ["silverstripe", "dark site", "skywest darksite"],
     "authors": [
         {
             "name": "Hilkiah Makemo",
@@ -10,5 +11,12 @@
     "require": {},
     "autoload": {
         "classmap": [ "src/" ]
+    },
+    "extra":{
+        "expose": [
+            "css",
+            "javascript",
+            "images"
+        ]
     }
 }
