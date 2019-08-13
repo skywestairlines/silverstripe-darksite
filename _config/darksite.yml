@@ -1,0 +1,9 @@
+---
+Name: mydarksiteconf
+---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - DarkSiteConfigDecorator
+Page_Controller:
+  extensions:
+    - DarkSiteControllerExtension

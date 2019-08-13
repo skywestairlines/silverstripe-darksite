@@ -2,10 +2,10 @@
 
 use SilverStripe\ORM\DataObject;
 //Extend the site config
-DataObject::add_extension('SiteConfig', 'DarkSiteConfigDecorator');
+//DataObject::add_extension('SiteConfig', 'DarkSiteConfigDecorator');
 
 //Extend the controller
-DataObject::add_extension('Page_Controller', 'DarkSiteControllerExtension');
+//DataObject::add_extension('Page_Controller', 'DarkSiteControllerExtension');
 
 // making the has_many dataObjects sortable
 //SortableDataObject::add_sortable_classes(array(
