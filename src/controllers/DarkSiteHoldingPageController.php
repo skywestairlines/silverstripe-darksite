@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 use SilverStripe\Dev\Debug;
 use SilverStripe\View\Requirements;
@@ -10,8 +10,7 @@ class DarkSiteHoldingPage_Controller extends PageController
     {
         RSSFeed::linkToFeed($this->Link() . 'rss');
         parent::init();
-        Requirements::css('darksite/css/darkStyle.css');
-
+        Requirements::css('skywest/ss-darksite: darksite/css/darkStyle.css');
     }
 
     public function index()
