@@ -11,6 +11,7 @@ class DarkSite_Resources extends DataObject
     // pages that can be accessible during the dark site - must be refered from dark site otherwise will be redirected back to dark site
     private static $db = array(
         'Title' => 'Varchar(80)',
+        'Sort' => 'Int'
     );
 
     private static $has_one = array(

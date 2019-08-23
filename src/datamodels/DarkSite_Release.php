@@ -16,6 +16,7 @@ class DarkSite_Release extends DataObject
         'Excerpt' => 'Text',
         'Date' => 'Date',
         'HideInRSS' => 'Boolean',
+        'Sort' => 'Int'
     );
 
     private static $has_one = array(
