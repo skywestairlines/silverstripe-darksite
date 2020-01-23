@@ -133,6 +133,7 @@ class DarkSite extends DataObject
     public function getCMSFields()
     {
         $f = parent::getCMSFields();
+        $f->removeByName(['Sort']);
         $f->addFieldToTab('Root.Main', TextField::create('FltNum')->setTitle('Flight Number'));
         $f->addFieldToTab('Root.Main', TextField::create('PRPlace')->setTitle('Title'));
         $f->addFieldToTab('Root.Main', CheckboxField::create('showTab')->setTitle('Show Notice on Home Page'));

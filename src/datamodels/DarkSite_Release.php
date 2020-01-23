@@ -6,6 +6,7 @@ use SilverStripe\Forms\DateField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Security\Member;
 use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Security\Permission;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
 class DarkSite_Release extends DataObject
