@@ -97,18 +97,18 @@ class DarkSite extends DataObject
 
     public function canView($member = NULL, $context = [])
     {
-
-        return Member::currentUser()->inGroups(array('3', '2'));
+        $member = $member ?: Member::currentUser();
+        return $member && $member->inGroups(array('3', '2'));
     }
     public function canCreate($member = NULL, $context = [])
     {
-
-        return Member::currentUser()->inGroups(array('3', '2'));
+        $member = $member ?: Member::currentUser();
+        return $member && $member->inGroups(array('3', '2'));
     }
     public function canEdit($member = NULL, $context = [])
     {
-
-        return Member::currentUser()->inGroups(array('3', '2'));
+        $member = $member ?: Member::currentUser();
+        return $member && $member->inGroups(array('3', '2'));
     }
 
     public function getDarkPage()
@@ -226,12 +226,14 @@ class DarkSite extends DataObject
         $f->addFieldToTab('Root.Partners', CheckboxField::create('showPartners')->setTitle('Show Selected Partner on Dark Site/Incident Page'));
         $f->addFieldToTab('Root.Partners', $s);
 
+        $Session = Controller::curr()->request->getSession();
+
         if ($this->Active) {
             $message = 'The dark site is currently Active.';
-            Controller::curr()->request->getSession()->set("FormInfo.Form_EditForm.formError.message", $message);
-            Controller::curr()->request->getSession()->set("FormInfo.Form_EditForm.formError.type", 'bad');
+            $Session->set("FormInfo.Form_EditForm.formError.message", $message);
+            $Session->set("FormInfo.Form_EditForm.formError.type", 'bad');
         } else {
-            Controller::curr()->request->getSession()->clear('FormInfo.Form_EditForm.formError.message');
+            $Session->clear('FormInfo.Form_EditForm.formError.message');
         }
         $f->removeByName('Active');
         return $f;
@@ -310,12 +312,13 @@ class DarkSite extends DataObject
     }
     function onAfterWrite()
     {
+        $Session = Controller::curr()->getRequest()->getSession();
         if ($this->Active) {
             $message = 'The dark site has been activated.';
-            Session::set("FormInfo.Form_EditForm.formError.message", $message);
-            Session::set("FormInfo.Form_EditForm.formError.type", 'bad');
+            $Session->set("FormInfo.Form_EditForm.formError.message", $message);
+            $Session->set("FormInfo.Form_EditForm.formError.type", 'bad');
         } else {
-            Session::clear('FormInfo.Form_EditForm.formError.message');
+            $Session->clear('FormInfo.Form_EditForm.formError.message');
         }
     }
     /*
