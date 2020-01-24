@@ -117,7 +117,7 @@ class DarkSiteHoldingPageController extends PageController
 
     public function DarkResources()
     {
-        if ($resources = DarkSite_Resources::get()->where("`ParentID` = '" . $this->latestIncidentID() . "'")->sort('SortOrder', 'ASC')->limit(3)) {
+        if ($resources = DarkSite_Resource::get()->where("`ParentID` = '" . $this->latestIncidentID() . "'")->sort('SortOrder', 'ASC')->limit(3)) {
             return $resources;
         }
         return false;

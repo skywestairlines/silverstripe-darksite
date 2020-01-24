@@ -7,12 +7,13 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\Security\Member;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
-class DarkSite_Resources extends DataObject
+class DarkSite_Resource extends DataObject
 {
     // pages that can be accessible during the dark site - must be refered from dark site otherwise will be redirected back to dark site
     private static $db = array(
         'Title' => 'Varchar(80)',
-        'Sort' => 'Int'
+        'SortOrder' => 'Int',
+        "Sort" => 'Int'
     );
 
     private static $has_one = array(

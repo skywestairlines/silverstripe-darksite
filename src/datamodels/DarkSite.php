@@ -49,7 +49,7 @@ class DarkSite extends DataObject
 
     private static $has_many = array(
         'Releases'     => 'DarkSite_Release',
-        'Resources' => 'DarkSite_Resources',
+        'Resources' => 'DarkSite_Resource',
         //'Partners'  => 'Partner'
     );
 
@@ -195,7 +195,7 @@ class DarkSite extends DataObject
         $res = new GridField(
 
             'Resources',
-            'DarkSite_Resources',
+            'DarkSite_Resource',
             $this->Resources(),
             GridFieldConfig_RelationEditor::create()
 
