@@ -161,7 +161,7 @@ class DarkSite extends DataObject
         $darkHoldPage = DarkSiteHoldingPage::get()->filter('Status', 'Published');
         if ($darkHoldPage) {
             if ($this->FltNum != 0) {
-                $f->addFieldToTab('Root.Activate', new LiteralField('', '<p><a href="/flight?num=' . $this->FltNum . '/" target="_blank">Preview Dark Site Page</a></p>'));
+                $f->addFieldToTab('Root.Activate', new LiteralField('', '<p><a href="/flight?num=' . $this->FltNum . '" target="_blank">Preview Dark Site Page</a></p>'));
             }
             //$f->addFieldToTab('Root.Activate', $selectDarkPage = new TreeDropdownField('DarkPageID', 'Page site will redirect to', 'SiteTree'));
             $f->addFieldToTab('Root.Activate', CheckboxField::create('Active')->setTitle('Active'));

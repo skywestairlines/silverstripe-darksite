@@ -22,14 +22,14 @@ class DarkSiteHoldingPageController extends PageController
         $ID = $params['ID'] ?: $params['Action'] ?: $this->request->getVar('num');
         if (is_numeric($ID) && $f = DarkSite::get()->filter('FltNum', $ID)->limit(1)) {
             //Debug::show('found');
-            return $this->customise($f)->renderWith('IncidentPage', 'DarkSiteHoldingPage');
+            return $this->customise($f)->renderWith(['Layout/IncidentPage', 'Layout/DarkSiteHoldingPage']);
             //return $this->latestIncidentID($params['ID']);
         } else {
             //Debug::show('not found!');
             //return self::httpError(404, 'Sorry that flight number could not be found.');
             if ($f = DarkSite::get()->filter('Active', '1')->limit(1)) {
                 //debug::show($f);
-                return $this->Customise($f)->renderWith(['DarkSiteHoldingPage', 'Page']);
+                return $this->Customise($f)->renderWith(['Layout/DarkSiteHoldingPage', 'Layout/Page']);
             } else {
                 return self::httpError(404, 'Sorry that flight number could not be found.');
             }
@@ -42,7 +42,7 @@ class DarkSiteHoldingPageController extends PageController
             if ($f = DarkSite::get()->filter('FltNum', $fltNum)->limit(1)) {
                 // return flt incident stuff
                 Debug::show('in FltNum');
-                return $this->customise($f)->renderWith(['DarkSiteHoldingPage', 'Page']);
+                return $this->customise($f)->renderWith(['Layout/DarkSiteHoldingPage', 'Layout/Page']);
             } else {
                 // return 404 page
                 //return self::httpError(404, 'Sorry that flight number could not be found.');
@@ -94,7 +94,7 @@ class DarkSiteHoldingPageController extends PageController
         }
         if ($d = DarkSite::get()->where($f)->limit(1)) {
             //Debug::show(DataObject::get_one('DarkSite', $f));
-            return $d['ID']->ID;
+            return $d->ID;
         }
     }
 
