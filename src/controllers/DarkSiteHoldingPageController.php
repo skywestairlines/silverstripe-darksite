@@ -79,7 +79,8 @@ class DarkSiteHoldingPageController extends PageController
      */
     public function latestIncidentID($fltNum = '')
     {
-        $params = $this->getURLParams();
+        $params = ($req = $this->request)->params();
+        $fltNum = $fltNum ?: $params['ID'] ?: $params['Action'] ?: $req->getVar('num');
         //Debug::show($params['ID']);
         if ($fltNum) {
             //Debug::show('flt num given');
