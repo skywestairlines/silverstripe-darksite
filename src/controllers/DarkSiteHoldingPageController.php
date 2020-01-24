@@ -4,7 +4,7 @@ use SilverStripe\Dev\Debug;
 use SilverStripe\View\Requirements;
 use SilverStripe\Control\RSS\RSSFeed;
 
-class DarkSiteHoldingPage_Controller extends PageController
+class DarkSiteHoldingPageController extends PageController
 {
     public function init()
     {
