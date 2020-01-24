@@ -13,12 +13,14 @@ class DarkSiteHoldingPageController extends PageController
         Requirements::css('skywest/ss-darksite: css/darkStyle.css');
     }
 
+
     public function index()
     {
         //$url = $_REQUEST['url'];
         $params = $this->getURLParams();
         //Debug::show($params['ID']);
-        if (is_numeric($params['ID']) && $f = DarkSite::get()->filter('FltNum', $params['ID'])->limit(1)) {
+        $ID = $params['ID'] ?: $params['Action'] ?: $this->request->getVar('num');
+        if (is_numeric($ID) && $f = DarkSite::get()->filter('FltNum', $ID)->limit(1)) {
             //Debug::show('found');
             return $this->customise($f)->renderWith('IncidentPage', 'DarkSiteHoldingPage');
             //return $this->latestIncidentID($params['ID']);
@@ -27,7 +29,7 @@ class DarkSiteHoldingPageController extends PageController
             //return self::httpError(404, 'Sorry that flight number could not be found.');
             if ($f = DarkSite::get()->filter('Active', '1')->limit(1)) {
                 //debug::show($f);
-                return $this->Customise($f)->renderWith('DarkSiteHoldingPage', 'Page');
+                return $this->Customise($f)->renderWith(['DarkSiteHoldingPage', 'Page']);
             } else {
                 return self::httpError(404, 'Sorry that flight number could not be found.');
             }
@@ -40,7 +42,7 @@ class DarkSiteHoldingPageController extends PageController
             if ($f = DarkSite::get()->filter('FltNum', $fltNum)->limit(1)) {
                 // return flt incident stuff
                 Debug::show('in FltNum');
-                return $this->customise($f)->renderWith('DarkSiteHoldingPage', 'Page');
+                return $this->customise($f)->renderWith(['DarkSiteHoldingPage', 'Page']);
             } else {
                 // return 404 page
                 //return self::httpError(404, 'Sorry that flight number could not be found.');
@@ -77,7 +79,8 @@ class DarkSiteHoldingPageController extends PageController
      */
     public function latestIncidentID($fltNum = '')
     {
-        $params = $this->getURLParams();
+        $params = ($req = $this->request)->params();
+        $fltNum = $fltNum ?: $params['ID'] ?: $params['Action'] ?: $req->getVar('num');
         //Debug::show($params['ID']);
         if ($fltNum) {
             //Debug::show('flt num given');

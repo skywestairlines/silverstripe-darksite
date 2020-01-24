@@ -3,6 +3,7 @@
 use SilverStripe\Assets\File;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
 use SilverStripe\Security\Member;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
