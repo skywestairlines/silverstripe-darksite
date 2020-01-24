@@ -19,7 +19,8 @@ class DarkSiteHoldingPageController extends PageController
         //$url = $_REQUEST['url'];
         $params = $this->getURLParams();
         //Debug::show($params['ID']);
-        if (is_numeric($params['ID']) && $f = DarkSite::get()->filter('FltNum', $params['ID'])->limit(1)) {
+        $ID = $params['ID'] ?: $params['Action'] ?: $this->request->getVar('num');
+        if (is_numeric($ID) && $f = DarkSite::get()->filter('FltNum', $ID)->limit(1)) {
             //Debug::show('found');
             return $this->customise($f)->renderWith('IncidentPage', 'DarkSiteHoldingPage');
             //return $this->latestIncidentID($params['ID']);
